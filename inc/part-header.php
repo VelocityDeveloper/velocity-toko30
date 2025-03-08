@@ -10,7 +10,7 @@
             <?php $sitelogo = velocitytheme_option('custom_logo'); ?>
             <div class="position-relative">
                 <?php if ($sitelogo) : ?>
-                    <a href="<?php get_home_url(); ?>">
+                    <a href="<?php echo get_home_url(); ?>">
                         <img src="<?php echo wp_get_attachment_image_url($sitelogo, 'full'); ?>" alt="Site Logo" loading="lazy">
                     </a>
                 <?php endif;  ?>
