@@ -152,6 +152,13 @@ function vd_search()
             </div>
         </form>
     </div>
-<?php
-    return ob_get_clean();
+<?php return ob_get_clean();
+}
+
+// [kontak-inline] (style="true" = tombol bertumpuk, "false" = tautan sebaris): kontak dari pengaturan VD Store.
+add_shortcode('kontak-inline', 'vd_kontak_inline');
+function vd_kontak_inline($atts)
+{
+    $atribut = shortcode_atts(['style' => 'true'], $atts);
+    return velocity_toko30_kontak($atribut['style'] === 'true' ? 'btn-sm d-block mb-1 btn btn-outline-dark' : 'btn btn-sm btn-link');
 }
